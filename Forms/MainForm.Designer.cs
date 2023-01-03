@@ -47,7 +47,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1187, 698);
+            this.TabControl.Size = new System.Drawing.Size(1187, 754);
             this.TabControl.TabIndex = 0;
             // 
             // MainPage
@@ -55,7 +55,7 @@
             this.MainPage.Location = new System.Drawing.Point(4, 34);
             this.MainPage.Name = "MainPage";
             this.MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainPage.Size = new System.Drawing.Size(1033, 556);
+            this.MainPage.Size = new System.Drawing.Size(1179, 716);
             this.MainPage.TabIndex = 0;
             this.MainPage.Text = "Home";
             this.MainPage.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@
             // 
             this.TicketsTab.Location = new System.Drawing.Point(4, 34);
             this.TicketsTab.Name = "TicketsTab";
-            this.TicketsTab.Size = new System.Drawing.Size(792, 412);
+            this.TicketsTab.Size = new System.Drawing.Size(1179, 660);
             this.TicketsTab.TabIndex = 2;
             this.TicketsTab.Text = "Tickets";
             this.TicketsTab.UseVisualStyleBackColor = true;
@@ -83,20 +83,22 @@
             // 
             this.SalonTab.Location = new System.Drawing.Point(4, 34);
             this.SalonTab.Name = "SalonTab";
-            this.SalonTab.Size = new System.Drawing.Size(792, 412);
+            this.SalonTab.Size = new System.Drawing.Size(1179, 660);
             this.SalonTab.TabIndex = 3;
             this.SalonTab.Text = "Salons";
             this.SalonTab.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1187, 698);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1187, 754);
             this.Controls.Add(this.TabControl);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.TabControl.ResumeLayout(false);
             this.ResumeLayout(false);

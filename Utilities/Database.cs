@@ -10,7 +10,7 @@ namespace CinemaManager.Utilities
 {
     internal class Database
     {
-        private static SQLiteConnection connection;
+        public static SQLiteConnection connection;
         private static SQLiteCommand command;
         private static SQLiteDataReader reader;
 
@@ -58,6 +58,8 @@ namespace CinemaManager.Utilities
             connection.Open();
 
             // Execute SQL statements to create the database structure here...
+            string createMoviesTable = "CREATE TABLE IF NOT EXISTS movies (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, year TEXT, rated TEXT, released TEXT, runtime TEXT, genre TEXT, director TEXT, writer TEXT, actors TEXT, plot TEXT, language TEXT, country TEXT, awards TEXT, poster TEXT, metascore TEXT, imdbRating TEXT, imdbVotes TEXT, imdbID TEXT, type TEXT, dvd TEXT, boxOffice TEXT, production TEXT, website TEXT)";
+            ExecuteQuery(createMoviesTable);
 
             connection.Close();
         }

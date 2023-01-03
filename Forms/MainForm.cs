@@ -28,12 +28,11 @@ namespace CinemaManager.Forms
             // Create an instance of the movie form
             MovieForm movieForm = new MovieForm();
             movieForm.TopLevel = false;
-            movieForm.FormBorderStyle = FormBorderStyle.None;
+            //movieForm.FormBorderStyle = FormBorderStyle.None;
 
             // Add the movie form to the tab page
             TabPage movieTabPage = TabControl.TabPages[1];
             movieTabPage.Controls.Add(movieForm);
-            Debug.WriteLine(movieTabPage.Controls.Count);
             // Show the movie form
             movieForm.Show();
         }
