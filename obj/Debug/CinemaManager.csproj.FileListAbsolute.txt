@@ -21,3 +21,7 @@ C:\Users\mohje\source\repos\CinemaManager\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\mohje\source\repos\CinemaManager\bin\Debug\EntityFramework.xml
 C:\Users\mohje\source\repos\CinemaManager\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mohje\source\repos\CinemaManager\bin\Debug\System.Data.SQLite.xml
+C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.BaseForm.resources
+C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.TicketsForm.resources
+C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.MovieView.resources
+C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.TicketsView.resources
