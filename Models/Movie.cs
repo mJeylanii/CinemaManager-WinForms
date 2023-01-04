@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CinemaManager.Models
 {
@@ -31,7 +27,7 @@ namespace CinemaManager.Models
         public string DVD { get; set; }
         public string BoxOffice { get; set; }
         public string Production { get; set; }
-        
+        public string dubbed { get; set; }
 
         public class Rating
         {

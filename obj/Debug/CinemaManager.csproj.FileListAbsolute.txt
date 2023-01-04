@@ -1,7 +1,6 @@
 C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.csproj.AssemblyReference.cache
 C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.csproj.SuggestedBindingRedirects.cache
 C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.MainForm.resources
-C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.MovieForm.resources
 C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Properties.Resources.resources
 C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.csproj.GenerateResource.cache
 C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.csproj.CoreCompileInputs.cache
@@ -21,3 +20,4 @@ C:\Users\mohje\source\repos\CinemaManager\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\mohje\source\repos\CinemaManager\bin\Debug\EntityFramework.xml
 C:\Users\mohje\source\repos\CinemaManager\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mohje\source\repos\CinemaManager\bin\Debug\System.Data.SQLite.xml
+C:\Users\mohje\source\repos\CinemaManager\obj\Debug\CinemaManager.Forms.MoviesView.resources
