@@ -9,9 +9,5 @@
         public string Hall { get; set; }
         public Movie Movie { get; set; }
 
-
-
-
-
     }
 }

@@ -72,7 +72,9 @@
     <Compile Include="Models\MovieManager.cs" />
     <Compile Include="Models\ShowTime.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketManager.cs" />
     <Compile Include="Presenters\MoviePresenter.cs" />
+    <Compile Include="Presenters\TicketPresenter.cs" />
     <Compile Include="Views\IMoviesView.cs" />
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>

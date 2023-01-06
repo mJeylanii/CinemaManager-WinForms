@@ -15,14 +15,18 @@ namespace CinemaManager.Forms
         //Create a new instance of the movie presenter
         private readonly MoviePresenter _moviePresenter;
         //Properties
-        public string MovieTitle { get { return MovieTitleText.Text; } }//Movie title
+        public string MovieTitle { 
+            get => MovieTitleText.Text;
+            set => MovieTitleText.Text = value;
+
+        }//Movie title
         public string MovieId { get { return MovieIdText.Text; } }   //Movie IMdb id   
         public string MovieYear { get { return MovieYearText.Text; } } //Movie year
-           //Online database radio button checked
+                                                                       //Online database radio button checked
         public bool OnlineDatabaseChecked => OnlineDatabaseRadio.Checked;
         //Local database radio button checked
         public bool LocalDatabaseChecked => LocalDatabaseRadio.Checked;
-        
+
 
 
 
@@ -32,6 +36,7 @@ namespace CinemaManager.Forms
         public event EventHandler<string> DeleteMovieClicked;
         public event EventHandler UpdateMovieClicked;
         public event EventHandler SetShowTimeClicked;
+        public event EventHandler GetAllMovies;
 
         public MoviesView()
         {
@@ -43,16 +48,21 @@ namespace CinemaManager.Forms
             AddMovieButton.Click += AddMovieButtonClicked;
             DeleteMovieButton.Click += DeleteMovieButtonClicked;
             SetShowTimeButton.Click += SetShowTimeButtonClicked;
+            GetAllMoviesButton.Click += GetAllMoviesButtonClicked;
 
         }
         //Implement event handlers
+        private void GetAllMoviesButtonClicked(object sender, EventArgs e)
+        {
+            GetAllMovies?.Invoke(this, EventArgs.Empty);
+        }
         public void SearchMovieButtonClicked(object sender, EventArgs e)
         {
             //Search for movie
             //Enable the disabled text fields
             MovieTitleText.Enabled = true;
             MovieIdText.Enabled = true;
-          
+
             //Get the search results
             //Invoke the event handler
             SearchMovieClicked?.Invoke(this, e);
@@ -63,7 +73,10 @@ namespace CinemaManager.Forms
 
         public void AddMovieButtonClicked(object sender, EventArgs e)
         {
+           
+            
             var grid = MoviesDataGridView;
+            this.MovieTitle = grid.CurrentRow.Cells[0].Value.ToString();
             List<string> columns = new List<string>();
             List<string> values = new List<string>();
             //Check if row is selected
@@ -95,7 +108,7 @@ namespace CinemaManager.Forms
                     foreach (DataGridViewColumn column in grid.Columns)
                     {
                         columns.Add(column.Name);
-                        values.Add("'" + grid.SelectedRows[0].Cells[column.Name].Value.ToString() + "'" );
+                        values.Add("'" + grid.SelectedRows[0].Cells[column.Name].Value.ToString() + "'");
                     }
                     //Get the selected row
                     var movie = Tuple.Create(columns, values);
@@ -134,38 +147,10 @@ namespace CinemaManager.Forms
         {
             //set show time
             //Invoke the presenter
-            _moviePresenter.SetShowTime();
+            // _moviePresenter.SetShowTime();
         }
-        private async void SearchButton_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-        private void AddToDatabaseBtn_Click(object sender, EventArgs e)
-        {
-
-            //Check if movie exists in database first check count
-
-            if (MovieManager.GetMovie(MovieTitleText.Text).Count > 0)
-            {
-                //Declare Columns and values by looping through grid
-                string columns = "";
-                string values = "";
-                for (int i = 0; i < MoviesDataGridView.Columns.Count; i++)
-                {
-                    columns += MoviesDataGridView.Columns[i].Name + ",";
-                    values += "'" + MoviesDataGridView.Rows[0].Cells[i].Value + "',";
-                }
-
-                MessageBox.Show("Movie already exists in database");
-            }
-            else
-            {
-                //Get columns and rows
-                MessageBox.Show("Movie added to database");
-            }
-
-
-        }
         private void MoviesGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var grid = (DataGridView)sender;
@@ -176,7 +161,7 @@ namespace CinemaManager.Forms
             else
             {
                 //set default poster
-                MoviePoster.Load("C:\\Users\\mohje\\source\\repos\\CinemaManager\\src\\posters\\default-poster.jpeg");
+                MoviePoster.Load("C:\\Users\\mohje\\source\\repos\\CinemaManager\\src\\posters\\default-poster.jpg");
 
             }
             foreach (TextBox tb in MovieDetailsGroup.Controls.OfType<TextBox>().OrderBy(c => int.Parse((string)c.Tag)))
@@ -185,19 +170,13 @@ namespace CinemaManager.Forms
             }
             MoviePoster.SizeMode = PictureBoxSizeMode.StretchImage;
         }
-        private void DisplayAllMoviesBtn_Click(object sender, EventArgs e)
-        {
-            //List<Movie> movies = MovieManager.GetMoviesDatabase();
-            //MoviesDataGridView.DataSource = movies;
-        }
+  
         private void UpdateMoviesList()
         {
-            //List<Movie> movieList = MovieManager.GetMoviesDatabase();
-            //MoviesDataGridView.DataSource = movieList;
+            List<Movie> movieList = MovieManager.GetAllMoviesLocal();
+            MoviesDataGridView.DataSource = movieList;
         }
-        private void DeleteMovieBtn_Click(object sender, EventArgs e)
-        {
-        }
+       
         private void MovieIdText_TextChanged(object sender, EventArgs e)
         {
             MovieTitleText.Enabled = false;
@@ -234,23 +213,13 @@ namespace CinemaManager.Forms
             Database.ExecuteQuery(createMoviesTable);
             Database.Close();
         }
-
-        //implement Showmovies method
-        //public void ShowMovies(List<Movie> movies)
-        //{
-        //    MoviesGridView.DataSource = movies;
-        //}
-        //Implement yes or no confirmation message
-
-      
-
         void IMoviesView.ShowMovies(List<Movie> movies)
         {
             MoviesDataGridView.DataSource = movies;
             MoviesDataGridView.Refresh();
         }
 
-     
+
     }
 }
 

@@ -85,6 +85,7 @@ namespace CinemaManager.Models
         {
             List<Movie> movieList = new List<Movie>();
             Database.Initialize();
+
             var reader = Database.ExecuteReader($"SELECT * FROM movies WHERE title = '{title}'");
             while (reader.Read())
             {
@@ -126,6 +127,8 @@ namespace CinemaManager.Models
         //Add movie method; takes Columns and Values List as parameters
         public static void AddMovie(List<string> columns, List<string> values)
         {
+           
+
             Database.Initialize();
             Database.ExecuteQuery($"INSERT INTO movies ({string.Join(", ", columns)}) VALUES ({string.Join(", ", values)})");
             Database.Close();

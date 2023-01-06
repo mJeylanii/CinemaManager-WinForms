@@ -12,8 +12,8 @@ namespace CinemaManager.Views
         //LocalDatabaseRadio checked
         bool LocalDatabaseChecked { get; }
         //OnlineDatabaseRadio checked
-        bool OnlineDatabaseChecked{ get; }
-        
+        bool OnlineDatabaseChecked { get; }
+
         void ShowMovies(List<Movie> movies);
         //Event handlers clicked
         event EventHandler SearchMovieClicked;
@@ -21,6 +21,7 @@ namespace CinemaManager.Views
         event EventHandler<string> DeleteMovieClicked;
         event EventHandler UpdateMovieClicked;
         event EventHandler SetShowTimeClicked;
+        event EventHandler GetAllMovies;
 
     }
 }

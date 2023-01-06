@@ -82,8 +82,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.MovieIdText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DisplayAllMoviesButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.GetAllMoviesButton = new System.Windows.Forms.Button();
+            this.SearchGroupBox = new System.Windows.Forms.GroupBox();
             this.LocalDatabaseRadio = new System.Windows.Forms.RadioButton();
             this.OnlineDatabaseRadio = new System.Windows.Forms.RadioButton();
             this.SearchMovieButton = new System.Windows.Forms.Button();
@@ -99,15 +99,15 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MoviesDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.SearchGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // MoviePoster
             // 
             this.MoviePoster.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MoviePoster.Location = new System.Drawing.Point(3, 16);
+            this.MoviePoster.Location = new System.Drawing.Point(3, 22);
             this.MoviePoster.Name = "MoviePoster";
-            this.MoviePoster.Size = new System.Drawing.Size(410, 681);
+            this.MoviePoster.Size = new System.Drawing.Size(410, 675);
             this.MoviePoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MoviePoster.TabIndex = 0;
             this.MoviePoster.TabStop = false;
@@ -119,6 +119,7 @@
             this.MovieDetailsBox.Controls.Add(this.MovieDetailsGroup);
             this.MovieDetailsBox.Controls.Add(this.MoviePoster);
             this.MovieDetailsBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MovieDetailsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.MovieDetailsBox.Location = new System.Drawing.Point(0, 380);
             this.MovieDetailsBox.MinimumSize = new System.Drawing.Size(0, 700);
             this.MovieDetailsBox.Name = "MovieDetailsBox";
@@ -137,9 +138,9 @@
             this.groupBox5.Controls.Add(this.SubbedRadioButton);
             this.groupBox5.Controls.Add(this.AddMovieButton);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox5.Location = new System.Drawing.Point(1563, 16);
+            this.groupBox5.Location = new System.Drawing.Point(1563, 22);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(354, 681);
+            this.groupBox5.Size = new System.Drawing.Size(354, 675);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Options";
@@ -181,14 +182,14 @@
             this.DeleteMovieButton.TabIndex = 3;
             this.DeleteMovieButton.Text = "Remove from Database";
             this.DeleteMovieButton.UseVisualStyleBackColor = true;
-            this.DeleteMovieButton.Click += new System.EventHandler(this.DeleteMovieBtn_Click);
+         
             // 
             // DubbedRadioButton
             // 
             this.DubbedRadioButton.AutoSize = true;
             this.DubbedRadioButton.Location = new System.Drawing.Point(169, 101);
             this.DubbedRadioButton.Name = "DubbedRadioButton";
-            this.DubbedRadioButton.Size = new System.Drawing.Size(63, 17);
+            this.DubbedRadioButton.Size = new System.Drawing.Size(84, 24);
             this.DubbedRadioButton.TabIndex = 2;
             this.DubbedRadioButton.TabStop = true;
             this.DubbedRadioButton.Text = "Dubbed";
@@ -199,7 +200,7 @@
             this.SubbedRadioButton.AutoSize = true;
             this.SubbedRadioButton.Location = new System.Drawing.Point(54, 101);
             this.SubbedRadioButton.Name = "SubbedRadioButton";
-            this.SubbedRadioButton.Size = new System.Drawing.Size(62, 17);
+            this.SubbedRadioButton.Size = new System.Drawing.Size(83, 24);
             this.SubbedRadioButton.TabIndex = 1;
             this.SubbedRadioButton.TabStop = true;
             this.SubbedRadioButton.Text = "Subbed";
@@ -213,7 +214,6 @@
             this.AddMovieButton.TabIndex = 0;
             this.AddMovieButton.Text = "Add To Database";
             this.AddMovieButton.UseVisualStyleBackColor = true;
-            this.AddMovieButton.Click += new System.EventHandler(this.AddMovieButtonClicked);
             // 
             // MovieDetailsGroup
             // 
@@ -601,7 +601,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1920, 338);
+            this.groupBox1.Size = new System.Drawing.Size(1920, 334);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movies";
@@ -613,7 +613,7 @@
             this.MoviesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MoviesDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MoviesDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.MoviesDataGridView.Location = new System.Drawing.Point(3, 118);
+            this.MoviesDataGridView.Location = new System.Drawing.Point(3, 114);
             this.MoviesDataGridView.Name = "MoviesDataGridView";
             this.MoviesDataGridView.ReadOnly = true;
             this.MoviesDataGridView.Size = new System.Drawing.Size(1914, 217);
@@ -626,8 +626,8 @@
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.MovieIdText);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.DisplayAllMoviesButton);
-            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.GetAllMoviesButton);
+            this.groupBox2.Controls.Add(this.SearchGroupBox);
             this.groupBox2.Controls.Add(this.SearchMovieButton);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.MovieYearText);
@@ -638,7 +638,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(3, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1914, 102);
+            this.groupBox2.Size = new System.Drawing.Size(1914, 98);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
@@ -647,7 +647,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(430, 51);
+            this.label22.Location = new System.Drawing.Point(420, 30);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 20);
             this.label22.TabIndex = 14;
@@ -658,7 +658,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label21.Location = new System.Drawing.Point(473, 48);
+            this.label21.Location = new System.Drawing.Point(468, 27);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(81, 24);
             this.label21.TabIndex = 13;
@@ -667,7 +667,7 @@
             // 
             // MovieIdText
             // 
-            this.MovieIdText.Location = new System.Drawing.Point(560, 43);
+            this.MovieIdText.Location = new System.Drawing.Point(555, 23);
             this.MovieIdText.MinimumSize = new System.Drawing.Size(4, 30);
             this.MovieIdText.Multiline = true;
             this.MovieIdText.Name = "MovieIdText";
@@ -679,40 +679,44 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.label1.Location = new System.Drawing.Point(724, 58);
+            this.label1.Location = new System.Drawing.Point(719, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Required";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // DisplayAllMoviesButton
+            // GetAllMoviesButton
             // 
-            this.DisplayAllMoviesButton.Location = new System.Drawing.Point(1472, 30);
-            this.DisplayAllMoviesButton.Name = "DisplayAllMoviesButton";
-            this.DisplayAllMoviesButton.Size = new System.Drawing.Size(190, 50);
-            this.DisplayAllMoviesButton.TabIndex = 10;
-            this.DisplayAllMoviesButton.Text = "Display All Movies";
-            this.DisplayAllMoviesButton.UseVisualStyleBackColor = true;
-            this.DisplayAllMoviesButton.Click += new System.EventHandler(this.DisplayAllMoviesBtn_Click);
+            this.GetAllMoviesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GetAllMoviesButton.Location = new System.Drawing.Point(1508, 15);
+            this.GetAllMoviesButton.Name = "GetAllMoviesButton";
+            this.GetAllMoviesButton.Size = new System.Drawing.Size(231, 50);
+            this.GetAllMoviesButton.TabIndex = 10;
+            this.GetAllMoviesButton.Text = "Display All Movies";
+            this.GetAllMoviesButton.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // SearchGroupBox
             // 
-            this.groupBox3.Controls.Add(this.LocalDatabaseRadio);
-            this.groupBox3.Controls.Add(this.OnlineDatabaseRadio);
-            this.groupBox3.Location = new System.Drawing.Point(1015, 22);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(220, 58);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Where to search?";
+            this.SearchGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SearchGroupBox.AutoSize = true;
+            this.SearchGroupBox.Controls.Add(this.LocalDatabaseRadio);
+            this.SearchGroupBox.Controls.Add(this.OnlineDatabaseRadio);
+            this.SearchGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchGroupBox.Location = new System.Drawing.Point(1006, 8);
+            this.SearchGroupBox.Name = "SearchGroupBox";
+            this.SearchGroupBox.Size = new System.Drawing.Size(220, 68);
+            this.SearchGroupBox.TabIndex = 9;
+            this.SearchGroupBox.TabStop = false;
+            this.SearchGroupBox.Text = "Where to search?";
             // 
             // LocalDatabaseRadio
             // 
             this.LocalDatabaseRadio.AutoSize = true;
-            this.LocalDatabaseRadio.Location = new System.Drawing.Point(6, 28);
+            this.LocalDatabaseRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocalDatabaseRadio.Location = new System.Drawing.Point(8, 22);
             this.LocalDatabaseRadio.Name = "LocalDatabaseRadio";
-            this.LocalDatabaseRadio.Size = new System.Drawing.Size(77, 21);
+            this.LocalDatabaseRadio.Size = new System.Drawing.Size(79, 22);
             this.LocalDatabaseRadio.TabIndex = 7;
             this.LocalDatabaseRadio.TabStop = true;
             this.LocalDatabaseRadio.Text = "Locally";
@@ -721,9 +725,10 @@
             // OnlineDatabaseRadio
             // 
             this.OnlineDatabaseRadio.AutoSize = true;
-            this.OnlineDatabaseRadio.Location = new System.Drawing.Point(120, 28);
+            this.OnlineDatabaseRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OnlineDatabaseRadio.Location = new System.Drawing.Point(129, 21);
             this.OnlineDatabaseRadio.Name = "OnlineDatabaseRadio";
-            this.OnlineDatabaseRadio.Size = new System.Drawing.Size(73, 21);
+            this.OnlineDatabaseRadio.Size = new System.Drawing.Size(74, 22);
             this.OnlineDatabaseRadio.TabIndex = 8;
             this.OnlineDatabaseRadio.TabStop = true;
             this.OnlineDatabaseRadio.Text = "Online";
@@ -731,19 +736,21 @@
             // 
             // SearchMovieButton
             // 
-            this.SearchMovieButton.Location = new System.Drawing.Point(1267, 29);
+            this.SearchMovieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchMovieButton.AutoSize = true;
+            this.SearchMovieButton.Location = new System.Drawing.Point(1249, 15);
             this.SearchMovieButton.Name = "SearchMovieButton";
-            this.SearchMovieButton.Size = new System.Drawing.Size(190, 50);
+            this.SearchMovieButton.Size = new System.Drawing.Size(239, 50);
             this.SearchMovieButton.TabIndex = 6;
             this.SearchMovieButton.Text = "Search";
             this.SearchMovieButton.UseVisualStyleBackColor = true;
-            this.SearchMovieButton.Click += new System.EventHandler(this.SearchMovieButtonClicked);
+
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.label3.Location = new System.Drawing.Point(954, 54);
+            this.label3.Location = new System.Drawing.Point(954, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 5;
@@ -752,7 +759,7 @@
             // 
             // MovieYearText
             // 
-            this.MovieYearText.Location = new System.Drawing.Point(832, 43);
+            this.MovieYearText.Location = new System.Drawing.Point(825, 22);
             this.MovieYearText.MaxLength = 4;
             this.MovieYearText.MinimumSize = new System.Drawing.Size(4, 30);
             this.MovieYearText.Name = "MovieYearText";
@@ -763,7 +770,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(772, 49);
+            this.label2.Location = new System.Drawing.Point(774, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
             this.label2.TabIndex = 3;
@@ -774,7 +781,7 @@
             // 
             this.SearchTitlelbl.AutoSize = true;
             this.SearchTitlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.SearchTitlelbl.Location = new System.Drawing.Point(201, 48);
+            this.SearchTitlelbl.Location = new System.Drawing.Point(188, 26);
             this.SearchTitlelbl.Name = "SearchTitlelbl";
             this.SearchTitlelbl.Size = new System.Drawing.Size(50, 24);
             this.SearchTitlelbl.TabIndex = 1;
@@ -784,7 +791,7 @@
             // MovieTitleText
             // 
             this.MovieTitleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieTitleText.Location = new System.Drawing.Point(257, 43);
+            this.MovieTitleText.Location = new System.Drawing.Point(244, 23);
             this.MovieTitleText.MinimumSize = new System.Drawing.Size(4, 30);
             this.MovieTitleText.Multiline = true;
             this.MovieTitleText.Name = "MovieTitleText";
@@ -814,8 +821,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MoviesDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.SearchGroupBox.ResumeLayout(false);
+            this.SearchGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -835,7 +842,7 @@
         private System.Windows.Forms.Button SearchMovieButton;
         private System.Windows.Forms.RadioButton OnlineDatabaseRadio;
         private System.Windows.Forms.RadioButton LocalDatabaseRadio;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox SearchGroupBox;
         private System.Windows.Forms.GroupBox MovieDetailsGroup;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -874,7 +881,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox IMDbRatingDetailsTxt;
-        private System.Windows.Forms.Button DisplayAllMoviesButton;
+        private System.Windows.Forms.Button GetAllMoviesButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox imdbID;
         private System.Windows.Forms.Label BoxOfficelbl;
