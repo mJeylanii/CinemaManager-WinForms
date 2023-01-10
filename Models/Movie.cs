@@ -27,7 +27,7 @@ namespace CinemaManager.Models
         public string DVD { get; set; }
         public string BoxOffice { get; set; }
         public string Production { get; set; }
-        public string dubbed { get; set; }
+        public string Dubbed { get; set; }
 
         public class Rating
         {

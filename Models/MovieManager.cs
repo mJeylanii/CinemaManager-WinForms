@@ -73,7 +73,7 @@ namespace CinemaManager.Models
                 movie.DVD = reader.GetString(20);
                 movie.BoxOffice = reader.GetString(21);
                 movie.Production = reader.GetString(22);
-
+                movie.Dubbed = reader.GetString(23);
 
                 // Add the movie object to a list or do something else with it
                 movieList.Add(movie);
@@ -112,6 +112,7 @@ namespace CinemaManager.Models
                 movie.DVD = reader.GetString(20);
                 movie.BoxOffice = reader.GetString(21);
                 movie.Production = reader.GetString(22);
+                movie.Dubbed = reader.GetString(22);
                 movieList.Add(movie);
             }
             return movieList;

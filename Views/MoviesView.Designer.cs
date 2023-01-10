@@ -75,8 +75,6 @@
             this.TitleDetailsTxt = new System.Windows.Forms.TextBox();
             this.TypeDetailsTxt = new System.Windows.Forms.TextBox();
             this.YearDetailstxt = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MoviesDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -92,14 +90,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SearchTitlelbl = new System.Windows.Forms.Label();
             this.MovieTitleText = new System.Windows.Forms.TextBox();
+            this.MoviesDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePoster)).BeginInit();
             this.MovieDetailsBox.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.MovieDetailsGroup.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MoviesDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SearchGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MoviesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MoviePoster
@@ -182,7 +180,6 @@
             this.DeleteMovieButton.TabIndex = 3;
             this.DeleteMovieButton.Text = "Remove from Database";
             this.DeleteMovieButton.UseVisualStyleBackColor = true;
-         
             // 
             // DubbedRadioButton
             // 
@@ -255,9 +252,9 @@
             this.MovieDetailsGroup.Controls.Add(this.TypeDetailsTxt);
             this.MovieDetailsGroup.Controls.Add(this.YearDetailstxt);
             this.MovieDetailsGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MovieDetailsGroup.Location = new System.Drawing.Point(443, 16);
+            this.MovieDetailsGroup.Location = new System.Drawing.Point(443, 22);
             this.MovieDetailsGroup.Name = "MovieDetailsGroup";
-            this.MovieDetailsGroup.Size = new System.Drawing.Size(1079, 580);
+            this.MovieDetailsGroup.Size = new System.Drawing.Size(1079, 576);
             this.MovieDetailsGroup.TabIndex = 4;
             this.MovieDetailsGroup.TabStop = false;
             this.MovieDetailsGroup.Text = "Details";
@@ -593,33 +590,6 @@
             this.YearDetailstxt.TabIndex = 2;
             this.YearDetailstxt.Tag = "2";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.MoviesDataGridView);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1920, 334);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Movies";
-            // 
-            // MoviesDataGridView
-            // 
-            this.MoviesDataGridView.AllowUserToAddRows = false;
-            this.MoviesDataGridView.AllowUserToDeleteRows = false;
-            this.MoviesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MoviesDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MoviesDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.MoviesDataGridView.Location = new System.Drawing.Point(3, 114);
-            this.MoviesDataGridView.Name = "MoviesDataGridView";
-            this.MoviesDataGridView.ReadOnly = true;
-            this.MoviesDataGridView.Size = new System.Drawing.Size(1914, 217);
-            this.MoviesDataGridView.TabIndex = 4;
-            this.MoviesDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MoviesGridView_RowHeaderMouseClick);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label22);
@@ -636,10 +606,10 @@
             this.groupBox2.Controls.Add(this.MovieTitleText);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(3, 16);
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1914, 98);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.Size = new System.Drawing.Size(1920, 107);
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
@@ -647,7 +617,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(420, 30);
+            this.label22.Location = new System.Drawing.Point(366, 49);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 20);
             this.label22.TabIndex = 14;
@@ -658,7 +628,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label21.Location = new System.Drawing.Point(468, 27);
+            this.label21.Location = new System.Drawing.Point(427, 49);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(81, 24);
             this.label21.TabIndex = 13;
@@ -667,19 +637,18 @@
             // 
             // MovieIdText
             // 
-            this.MovieIdText.Location = new System.Drawing.Point(555, 23);
+            this.MovieIdText.Location = new System.Drawing.Point(514, 43);
             this.MovieIdText.MinimumSize = new System.Drawing.Size(4, 30);
             this.MovieIdText.Multiline = true;
             this.MovieIdText.Name = "MovieIdText";
             this.MovieIdText.Size = new System.Drawing.Size(158, 30);
             this.MovieIdText.TabIndex = 12;
-            this.MovieIdText.TextChanged += new System.EventHandler(this.MovieIdText_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.label1.Location = new System.Drawing.Point(719, 35);
+            this.label1.Location = new System.Drawing.Point(678, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 11;
@@ -689,7 +658,7 @@
             // GetAllMoviesButton
             // 
             this.GetAllMoviesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GetAllMoviesButton.Location = new System.Drawing.Point(1508, 15);
+            this.GetAllMoviesButton.Location = new System.Drawing.Point(1525, 26);
             this.GetAllMoviesButton.Name = "GetAllMoviesButton";
             this.GetAllMoviesButton.Size = new System.Drawing.Size(231, 50);
             this.GetAllMoviesButton.TabIndex = 10;
@@ -703,7 +672,7 @@
             this.SearchGroupBox.Controls.Add(this.LocalDatabaseRadio);
             this.SearchGroupBox.Controls.Add(this.OnlineDatabaseRadio);
             this.SearchGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchGroupBox.Location = new System.Drawing.Point(1006, 8);
+            this.SearchGroupBox.Location = new System.Drawing.Point(1009, 22);
             this.SearchGroupBox.Name = "SearchGroupBox";
             this.SearchGroupBox.Size = new System.Drawing.Size(220, 68);
             this.SearchGroupBox.TabIndex = 9;
@@ -738,13 +707,12 @@
             // 
             this.SearchMovieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchMovieButton.AutoSize = true;
-            this.SearchMovieButton.Location = new System.Drawing.Point(1249, 15);
+            this.SearchMovieButton.Location = new System.Drawing.Point(1266, 26);
             this.SearchMovieButton.Name = "SearchMovieButton";
             this.SearchMovieButton.Size = new System.Drawing.Size(239, 50);
             this.SearchMovieButton.TabIndex = 6;
             this.SearchMovieButton.Text = "Search";
             this.SearchMovieButton.UseVisualStyleBackColor = true;
-
             // 
             // label3
             // 
@@ -759,7 +727,7 @@
             // 
             // MovieYearText
             // 
-            this.MovieYearText.Location = new System.Drawing.Point(825, 22);
+            this.MovieYearText.Location = new System.Drawing.Point(788, 43);
             this.MovieYearText.MaxLength = 4;
             this.MovieYearText.MinimumSize = new System.Drawing.Size(4, 30);
             this.MovieYearText.Name = "MovieYearText";
@@ -770,7 +738,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(774, 27);
+            this.label2.Location = new System.Drawing.Point(733, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
             this.label2.TabIndex = 3;
@@ -781,7 +749,7 @@
             // 
             this.SearchTitlelbl.AutoSize = true;
             this.SearchTitlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.SearchTitlelbl.Location = new System.Drawing.Point(188, 26);
+            this.SearchTitlelbl.Location = new System.Drawing.Point(129, 44);
             this.SearchTitlelbl.Name = "SearchTitlelbl";
             this.SearchTitlelbl.Size = new System.Drawing.Size(50, 24);
             this.SearchTitlelbl.TabIndex = 1;
@@ -791,20 +759,34 @@
             // MovieTitleText
             // 
             this.MovieTitleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieTitleText.Location = new System.Drawing.Point(244, 23);
+            this.MovieTitleText.Location = new System.Drawing.Point(185, 43);
             this.MovieTitleText.MinimumSize = new System.Drawing.Size(4, 30);
             this.MovieTitleText.Multiline = true;
             this.MovieTitleText.Name = "MovieTitleText";
             this.MovieTitleText.Size = new System.Drawing.Size(158, 30);
             this.MovieTitleText.TabIndex = 0;
-            this.MovieTitleText.TextChanged += new System.EventHandler(this.MovieTitleText_TextChanged);
+            // 
+            // MoviesDataGridView
+            // 
+            this.MoviesDataGridView.AllowUserToAddRows = false;
+            this.MoviesDataGridView.AllowUserToDeleteRows = false;
+            this.MoviesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MoviesDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MoviesDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.MoviesDataGridView.Location = new System.Drawing.Point(0, 126);
+            this.MoviesDataGridView.Name = "MoviesDataGridView";
+            this.MoviesDataGridView.ReadOnly = true;
+            this.MoviesDataGridView.Size = new System.Drawing.Size(1920, 254);
+            this.MoviesDataGridView.TabIndex = 5;
+            this.MoviesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MoviesDataGridView_CellClick);
             // 
             // MoviesView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.MoviesDataGridView);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.MovieDetailsBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MoviesView";
@@ -817,12 +799,11 @@
             this.groupBox5.PerformLayout();
             this.MovieDetailsGroup.ResumeLayout(false);
             this.MovieDetailsGroup.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MoviesDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.SearchGroupBox.ResumeLayout(false);
             this.SearchGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MoviesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -832,17 +813,6 @@
 
         private System.Windows.Forms.PictureBox MoviePoster;
         private System.Windows.Forms.GroupBox MovieDetailsBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox MovieTitleText;
-        private System.Windows.Forms.Label SearchTitlelbl;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox MovieYearText;
-        private System.Windows.Forms.Button SearchMovieButton;
-        private System.Windows.Forms.RadioButton OnlineDatabaseRadio;
-        private System.Windows.Forms.RadioButton LocalDatabaseRadio;
-        private System.Windows.Forms.GroupBox SearchGroupBox;
         private System.Windows.Forms.GroupBox MovieDetailsGroup;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -856,7 +826,6 @@
         private System.Windows.Forms.RadioButton DubbedRadioButton;
         private System.Windows.Forms.RadioButton SubbedRadioButton;
         private System.Windows.Forms.Button AddMovieButton;
-        private System.Windows.Forms.DataGridView MoviesDataGridView;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox ReleasedDetailsTxt;
         private System.Windows.Forms.Label label15;
@@ -881,18 +850,29 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox IMDbRatingDetailsTxt;
-        private System.Windows.Forms.Button GetAllMoviesButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox imdbID;
         private System.Windows.Forms.Label BoxOfficelbl;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button DeleteMovieButton;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox MovieIdText;
         private System.Windows.Forms.Button ClearDatabaseButton;
         private System.Windows.Forms.Button CreateMovieTableButton;
         private System.Windows.Forms.Button SetShowTimeButton;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox MovieIdText;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button GetAllMoviesButton;
+        private System.Windows.Forms.GroupBox SearchGroupBox;
+        private System.Windows.Forms.RadioButton LocalDatabaseRadio;
+        private System.Windows.Forms.RadioButton OnlineDatabaseRadio;
+        private System.Windows.Forms.Button SearchMovieButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox MovieYearText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label SearchTitlelbl;
+        private System.Windows.Forms.TextBox MovieTitleText;
+        private System.Windows.Forms.DataGridView MoviesDataGridView;
     }
 }

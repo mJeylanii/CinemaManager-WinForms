@@ -73,10 +73,8 @@ namespace CinemaManager.Forms
 
         public void AddMovieButtonClicked(object sender, EventArgs e)
         {
-           
-            
             var grid = MoviesDataGridView;
-            this.MovieTitle = grid.CurrentRow.Cells[0].Value.ToString();
+            MovieTitle = grid.CurrentRow.Cells[0].Value.ToString();
             List<string> columns = new List<string>();
             List<string> values = new List<string>();
             //Check if row is selected
@@ -95,6 +93,8 @@ namespace CinemaManager.Forms
                         values.Add("'" + grid.SelectedRows[0].Cells[column.Name].Value.ToString() + "'");
                     }
                     //Get the selected row
+                    columns.Add("dubbed");
+                    values.Add("'subbed'");
                     var movie = Tuple.Create(columns, values);
                     //Invoke the event handler
                     AddMovieClicked?.Invoke(this, movie);
@@ -111,6 +111,9 @@ namespace CinemaManager.Forms
                         values.Add("'" + grid.SelectedRows[0].Cells[column.Name].Value.ToString() + "'");
                     }
                     //Get the selected row
+                    //Add dubbed value to last column
+                    columns.Add("dubbed");
+                    values.Add("'Dubbed'");
                     var movie = Tuple.Create(columns, values);
                     //Invoke the event handler
                     AddMovieClicked?.Invoke(this, movie);
@@ -118,7 +121,7 @@ namespace CinemaManager.Forms
                 else
                 {
                     //Show error message
-                    MessageBox.Show("Please select a language");
+                   DialogMessages.WarningMessage("Please select a language");
                 }
             }
             else
@@ -219,7 +222,25 @@ namespace CinemaManager.Forms
             MoviesDataGridView.Refresh();
         }
 
+        private void MoviesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var grid = (DataGridView)sender;
+            if (grid.Rows[e.RowIndex].Cells[13].Value.ToString() != "N/A")
+            {
+                MoviePoster.Load(grid.Rows[e.RowIndex].Cells[13].Value.ToString());
+            }
+            else
+            {
+                //set default poster
+                MoviePoster.Load("C:\\Users\\mohje\\source\\repos\\CinemaManager\\src\\posters\\default-poster.jpg");
 
+            }
+            foreach (TextBox tb in MovieDetailsGroup.Controls.OfType<TextBox>().OrderBy(c => int.Parse((string)c.Tag)))
+            {
+                tb.Text = grid.Rows[e.RowIndex].Cells[int.Parse((string)tb.Tag) - 1].Value.ToString();
+            }
+            MoviePoster.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
     }
 }
 
