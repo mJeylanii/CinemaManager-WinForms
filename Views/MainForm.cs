@@ -20,6 +20,7 @@ namespace CinemaManager.Forms
             // Create an instance of the movie form
             MoviesView movieForm = new MoviesView();
             movieForm.TopLevel = false;
+            movieForm.Dock = DockStyle.Fill;
             //movieForm.FormBorderStyle = FormBorderStyle.None;
 
             // Add the movie form to the tab page

@@ -138,7 +138,7 @@ namespace CinemaManager.Forms
             var title = grid.CurrentRow.Cells[0].Value.ToString();
             //Invoke method in presenter
             DeleteMovieClicked?.Invoke(this, title);
-            UpdateMoviesList();
+            
         }
         public void UpdateMovieButtonClicked(object sender, EventArgs e)
         {
@@ -157,28 +157,38 @@ namespace CinemaManager.Forms
         private void MoviesGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var grid = (DataGridView)sender;
+            //Check if poster value is not "N/A"
             if (grid.Rows[e.RowIndex].Cells[13].Value.ToString() != "N/A")
             {
+                //Get the poster value and display it in the picture box
                 MoviePoster.Load(grid.Rows[e.RowIndex].Cells[13].Value.ToString());
+                MoviePoster.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             else
             {
-                //set default poster
+                //Else set default poster/not found poster
                 MoviePoster.Load("C:\\Users\\mohje\\source\\repos\\CinemaManager\\src\\posters\\default-poster.jpg");
+                MoviePoster.SizeMode = PictureBoxSizeMode.StretchImage;
 
             }
+            
+            //<Summary>
+            //Foreach loop that loops through the textboxes in the movie details group using their Tag property, which is a number corresponding to
+            //their vertical position in the group box. The loop then sets the text of the textbox to the value of the corresponding cell in the gridview
+            //</Summary>
             foreach (TextBox tb in MovieDetailsGroup.Controls.OfType<TextBox>().OrderBy(c => int.Parse((string)c.Tag)))
             {
+             
                 tb.Text = grid.Rows[e.RowIndex].Cells[int.Parse((string)tb.Tag) - 1].Value.ToString();
             }
-            MoviePoster.SizeMode = PictureBoxSizeMode.StretchImage;
+            
         }
-  
-        private void UpdateMoviesList()
+
+        private void UpdateMoviesList(List<Movie> movies)
         {
-            List<Movie> movieList = MovieManager.GetAllMoviesLocal();
-            MoviesDataGridView.DataSource = movieList;
+            MoviesDataGridView.DataSource = movies;
         }
+       
        
         private void MovieIdText_TextChanged(object sender, EventArgs e)
         {
@@ -200,12 +210,9 @@ namespace CinemaManager.Forms
                 Database.Initialize();
                 Database.ExecuteQuery("DROP TABLE movies");
                 Database.Close();
-                UpdateMoviesList();
+                MoviesDataGridView.Refresh();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //Do nothing
-            }
+         
 
         }
 

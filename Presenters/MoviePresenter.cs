@@ -81,7 +81,8 @@ namespace CinemaManager.Presenters
         public void DeleteMovie(string title)
         {
             MovieManager.DeleteMovie(title);
-            DialogMessages.SuccessMessage("Movie deleted successfully");      
+            DialogMessages.SuccessMessage("Movie deleted successfully");
+            GetAllMovies();
         }
         //Update movie in database
         public void UpdateMovie()
